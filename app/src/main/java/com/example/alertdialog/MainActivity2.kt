@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 
@@ -15,6 +16,7 @@ class MainActivity2 : AppCompatActivity() {
 
         val etMessage:EditText = findViewById(R.id.msg)
         val btDisplay:Button = findViewById(R.id.send_btn)
+        val reset:TextView = findViewById(R.id.reset)
 
         btDisplay.setOnClickListener {
             val alertDialog = AlertDialog.Builder(this)
@@ -30,6 +32,10 @@ class MainActivity2 : AppCompatActivity() {
                 }
                 .create()
             alertDialog.show()
+        }
+
+        reset.setOnClickListener {
+            etMessage.text = null
         }
     }
 }
